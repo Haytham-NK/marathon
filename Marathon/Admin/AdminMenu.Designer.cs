@@ -54,7 +54,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(23, 498);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(81, 19);
             this.metroLabel1.TabIndex = 5;
             this.metroLabel1.Text = "metroLabel1";
             // 
@@ -132,6 +132,7 @@
             this.metroComboBox1.Size = new System.Drawing.Size(206, 29);
             this.metroComboBox1.TabIndex = 8;
             this.metroComboBox1.UseSelectable = true;
+            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
             // 
             // metroLabel2
             // 

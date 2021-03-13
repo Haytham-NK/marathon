@@ -36,6 +36,7 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroComboBoxRunner = new MetroFramework.Controls.MetroComboBox();
+            this.marathonDataSet = new Marathon.marathonDataSet();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
@@ -54,6 +55,10 @@
             this.metroButtonMinus = new MetroFramework.Controls.MetroButton();
             this.metroButtonPlus = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.runnerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.runnerTableAdapter = new Marathon.marathonDataSetTableAdapters.runnerTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.marathonDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.runnerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // metroButton2
@@ -139,6 +144,12 @@
             this.metroComboBoxRunner.Size = new System.Drawing.Size(253, 29);
             this.metroComboBoxRunner.TabIndex = 71;
             this.metroComboBoxRunner.UseSelectable = true;
+            this.metroComboBoxRunner.SelectedIndexChanged += new System.EventHandler(this.metroComboBoxRunner_SelectedIndexChanged);
+            // 
+            // marathonDataSet
+            // 
+            this.marathonDataSet.DataSetName = "marathonDataSet";
+            this.marathonDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // metroLabel3
             // 
@@ -423,6 +434,7 @@
             this.metroButtonMinus.Size = new System.Drawing.Size(60, 29);
             this.metroButtonMinus.TabIndex = 77;
             this.metroButtonMinus.UseSelectable = true;
+            this.metroButtonMinus.Click += new System.EventHandler(this.metroButtonMinus_Click);
             // 
             // metroButtonPlus
             // 
@@ -447,6 +459,15 @@
             this.metroButton1.TabIndex = 68;
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click_1);
+            // 
+            // runnerBindingSource
+            // 
+            this.runnerBindingSource.DataMember = "runner";
+            this.runnerBindingSource.DataSource = this.marathonDataSet;
+            // 
+            // runnerTableAdapter
+            // 
+            this.runnerTableAdapter.ClearBeforeFill = true;
             // 
             // AddSponsors
             // 
@@ -481,6 +502,9 @@
             this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Text = "Спонсор бегуна";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
+            this.Load += new System.EventHandler(this.AddSponsors_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.marathonDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.runnerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,5 +537,8 @@
         private MetroFramework.Controls.MetroLabel metroLabelSumInfo;
         private MetroFramework.Controls.MetroLabel metroLabelCharity;
         private MetroFramework.Controls.MetroTextBox metroTextBoxCharitySum;
+        private marathonDataSet marathonDataSet;
+        private System.Windows.Forms.BindingSource runnerBindingSource;
+        private marathonDataSetTableAdapters.runnerTableAdapter runnerTableAdapter;
     }
 }

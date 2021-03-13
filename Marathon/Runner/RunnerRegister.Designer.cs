@@ -350,6 +350,7 @@
             this.metroComboBox1.Size = new System.Drawing.Size(254, 29);
             this.metroComboBox1.TabIndex = 29;
             this.metroComboBox1.UseSelectable = true;
+            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
             // 
             // pictureBox1
             // 

@@ -119,5 +119,10 @@ namespace Marathon.Admin
             Admin.EditUser eu = new Admin.EditUser(index);
             eu.Show();
         }
+
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
